@@ -1,0 +1,99 @@
+Network IP: 187.161.205.0 ( BB.A1.CD.00)
+Mask: /24
+Broadcast: 187.161.205.255(BB.A1.CD.FF)
+
+Pentru Networks normale:
++3 = (Network IP, Broadcast IP, Gateway)
+Sunt deja descrescator, nu mai fac reordonare
+Pentru broadcast doar adun 2^n -1 la NetworkIP, unde n este 32-mask-ul
+Gateway va fi NetworkIP+1
+
+N1:
+	60 IPs
+	60 + 3 = 63 -> 64=2^6 -> /26
+	Mask: /26 255.255.255.192
+	NetworkIP: 187.161.205.0
+	Broadcast: 187.161.205.63
+	Gateway:   187.161.205.1
+
+N2:
+	48 IPs
+	48 + 3 = 51 -> 64=2^6 -> /26
+	Mask: /26 255.255.255.192
+	NetworkIP: 187.161.205.64
+	Broadcast: 187.161.205.127
+	Gateway:   187.161.205.65
+
+N3:
+	12 IPs
+	12 + 3 = 15 -> 16=2^4 -> /28
+	Mask: /28 255.255.255.240
+	NetworkIP: 187.161.205.128
+	Broadcast: 187.161.205.143
+	Gateway:   187.161.205.129
+
+N4:
+	12IPs
+	12 + 3 = 15 -> 16=2^4 -> /28
+	Mask: /28 255.255.255.240
+	NetworkIP: 187.161.205.144
+	Broadcast: 187.161.205.159
+	Gateway:   187.161.205.145
+
+N5:
+	4 IPs
+	4 + 3 = 7 -> 8=2^3 -> /29
+	Mask: /29 255.255.255.248
+	NetworkIP: 187.161.205.160
+	Gateway:   187.161.205.161
+	Broadcast: 187.161.205.167
+
+
+Pentru Router-to-Router:
+4 = (ip pentru router1) + (ip pentru router2) + (Network, Broadcast -> nu avem nevoie de Gateway)
+4 -> 4=2^2 -> /30
+RXY ->  x=NetworkIP+1
+	y=NetworkIP+2
+
+4 IPs
+Mask: /30 255.255.255.252
+
+R12:
+	NetworkIP:187.161.205.168
+	Broadcast:187.161.205.171
+	R1:       187.161.205.169
+	R2:       187.161.205.170
+
+R15:
+	NetworkIP:187.161.205.172
+	Broadcast:187.161.205.175
+	R1:       187.161.205.173
+	R5:       187.161.205.174
+
+R23:
+	NetworkIP:187.161.205.176
+	Broadcast:187.161.205.179
+	R2:       187.161.205.177
+	R3:       187.161.205.178
+
+R34:
+	NetworkIP:187.161.205.180
+	Broadcast:187.161.205.183
+	R3:       187.161.205.181
+	R4:       187.161.205.182
+
+R45:
+	NetworkIP:187.161.205.184
+	Broadcast:187.161.205.187
+	R4:       187.161.205.185
+	R5:       187.161.205.186
+
+R56:
+	NetworkIP:187.161.205.188
+	Broadcast:187.161.205.191
+	R5:       187.161.205.189
+	R6:       187.161.205.190
+
+
+
+

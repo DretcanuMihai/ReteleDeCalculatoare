@@ -1,0 +1,9 @@
+-------DNS-------
+
+en
+conf t
+ip dhcp pool *numele pool-ului*
+dns-server *adresa serverului*
+exit
+exit
+wr mem

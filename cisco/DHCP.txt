@@ -1,0 +1,11 @@
+-----DHCP-----
+
+en
+conf t
+ip dhcp pool *nume* (spre exemplu r2)
+network *network_address* *mask*
+default-router *router_address*
+exit
+ip dhcp excluded-address *interval_start* *interval_end*
+exit 
+wr mem

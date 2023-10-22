@@ -1,0 +1,12 @@
+-----NAT-----
+
+en
+conf t
+ip nat inside source static *adresa_actuala* *adresa_routerului*
+interface *interfata_ce_duce_in_network* (Ex fastEthernet 0/1)
+ip nat inside
+exit
+interface *interfata_ce_duce_inafara_network* (Ex fastEthernet 0/0)
+ip nat outside
+exit
+exit wr mem
